@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="kionModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="bolum">
+          <Key>
+            <PropertyRef Name="bolId" />
+          </Key>
+          <Property Name="bolId" Type="int" Nullable="false" />
+          <Property Name="fakId" Type="int" />
+          <Property Name="uniId" Type="int" />
+          <Property Name="bolAd" Type="nvarchar" MaxLength="500" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <EntityType Name="dokuman">
+          <Key>
+            <PropertyRef Name="docId" />
+          </Key>
+          <Property Name="docId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="docTur" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="docYol" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="tckn" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="fakulte">
+          <Key>
+            <PropertyRef Name="fakId" />
+          </Key>
+          <Property Name="fakId" Type="int" Nullable="false" />
+          <Property Name="fakAd" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="uniId" Type="int" Nullable="false" />
+          <Property Name="status" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="onKayit">
+          <Key>
+            <PropertyRef Name="tckn" />
+          </Key>
+          <Property Name="tckn" Type="bigint" Nullable="false" />
+          <Property Name="ad" Type="nvarchar" MaxLength="50" />
+          <Property Name="soyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="anneAd" Type="nvarchar" MaxLength="50" />
+          <Property Name="anneSoyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="babaAd" Type="nvarchar" MaxLength="50" />
+          <Property Name="babaSoyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="uniId" Type="int" />
+          <Property Name="fakId" Type="int" />
+          <Property Name="bolId" Type="int" />
+          <Property Name="ales" Type="bit" />
+          <Property Name="diploma" Type="bit" />
+          <Property Name="askerlik" Type="bit" />
+          <Property Name="gsm" Type="bigint" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="universite">
+          <Key>
+            <PropertyRef Name="uniId" />
+          </Key>
+          <Property Name="uniId" Type="int" Nullable="false" />
+          <Property Name="uniAd" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="status" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="kionModel1StoreContainer">
+          <EntitySet Name="bolum" EntityType="Self.bolum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dokuman" EntityType="Self.dokuman" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fakulte" EntityType="Self.fakulte" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="onKayit" EntityType="Self.onKayit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="universite" EntityType="Self.universite" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="kionModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="bolum">
+          <Key>
+            <PropertyRef Name="bolId" />
+          </Key>
+          <Property Name="bolId" Type="Int32" Nullable="false" />
+          <Property Name="fakId" Type="Int32" />
+          <Property Name="uniId" Type="Int32" />
+          <Property Name="bolAd" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="dokuman">
+          <Key>
+            <PropertyRef Name="docId" />
+          </Key>
+          <Property Name="docId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="docTur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="docYol" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tckn" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="fakulte">
+          <Key>
+            <PropertyRef Name="fakId" />
+          </Key>
+          <Property Name="fakId" Type="Int32" Nullable="false" />
+          <Property Name="fakAd" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="uniId" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="onKayit">
+          <Key>
+            <PropertyRef Name="tckn" />
+          </Key>
+          <Property Name="tckn" Type="Int64" Nullable="false" />
+          <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="anneAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="anneSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="babaAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="babaSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="uniId" Type="Int32" />
+          <Property Name="fakId" Type="Int32" />
+          <Property Name="bolId" Type="Int32" />
+          <Property Name="ales" Type="Boolean" />
+          <Property Name="diploma" Type="Boolean" />
+          <Property Name="askerlik" Type="Boolean" />
+          <Property Name="gsm" Type="Int64" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="universite">
+          <Key>
+            <PropertyRef Name="uniId" />
+          </Key>
+          <Property Name="uniId" Type="Int32" Nullable="false" />
+          <Property Name="uniAd" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="status" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="kionEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="bolum" EntityType="Self.bolum" />
+          <EntitySet Name="dokuman" EntityType="Self.dokuman" />
+          <EntitySet Name="fakulte" EntityType="Self.fakulte" />
+          <EntitySet Name="onKayit" EntityType="Self.onKayit" />
+          <EntitySet Name="universite" EntityType="Self.universite" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="kionModel1StoreContainer" CdmEntityContainer="kionEntities1">
+          <EntitySetMapping Name="bolum">
+            <EntityTypeMapping TypeName="kionModel1.bolum">
+              <MappingFragment StoreEntitySet="bolum">
+                <ScalarProperty Name="bolId" ColumnName="bolId" />
+                <ScalarProperty Name="fakId" ColumnName="fakId" />
+                <ScalarProperty Name="uniId" ColumnName="uniId" />
+                <ScalarProperty Name="bolAd" ColumnName="bolAd" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dokuman">
+            <EntityTypeMapping TypeName="kionModel1.dokuman">
+              <MappingFragment StoreEntitySet="dokuman">
+                <ScalarProperty Name="tckn" ColumnName="tckn" />
+                <ScalarProperty Name="docId" ColumnName="docId" />
+                <ScalarProperty Name="docTur" ColumnName="docTur" />
+                <ScalarProperty Name="docYol" ColumnName="docYol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fakulte">
+            <EntityTypeMapping TypeName="kionModel1.fakulte">
+              <MappingFragment StoreEntitySet="fakulte">
+                <ScalarProperty Name="fakId" ColumnName="fakId" />
+                <ScalarProperty Name="fakAd" ColumnName="fakAd" />
+                <ScalarProperty Name="uniId" ColumnName="uniId" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="onKayit">
+            <EntityTypeMapping TypeName="kionModel1.onKayit">
+              <MappingFragment StoreEntitySet="onKayit">
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="gsm" ColumnName="gsm" />
+                <ScalarProperty Name="tckn" ColumnName="tckn" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="soyad" ColumnName="soyad" />
+                <ScalarProperty Name="anneAd" ColumnName="anneAd" />
+                <ScalarProperty Name="anneSoyad" ColumnName="anneSoyad" />
+                <ScalarProperty Name="babaAd" ColumnName="babaAd" />
+                <ScalarProperty Name="babaSoyad" ColumnName="babaSoyad" />
+                <ScalarProperty Name="uniId" ColumnName="uniId" />
+                <ScalarProperty Name="fakId" ColumnName="fakId" />
+                <ScalarProperty Name="bolId" ColumnName="bolId" />
+                <ScalarProperty Name="ales" ColumnName="ales" />
+                <ScalarProperty Name="diploma" ColumnName="diploma" />
+                <ScalarProperty Name="askerlik" ColumnName="askerlik" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="universite">
+            <EntityTypeMapping TypeName="kionModel1.universite">
+              <MappingFragment StoreEntitySet="universite">
+                <ScalarProperty Name="uniId" ColumnName="uniId" />
+                <ScalarProperty Name="uniAd" ColumnName="uniAd" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
